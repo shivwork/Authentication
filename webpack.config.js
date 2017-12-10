@@ -4,10 +4,9 @@ var webpack = require('webpack');
 module.exports = {
     devServer: {
         historyApiFallback:true,
-        hot: true,
         inline: true,
         contentBase: './src',
-        port: 3001
+        port: 3000
     },
     devtool: 'cheap-module-eval-source-map',
     entry: './App/index.js',
