@@ -1,1 +1,8 @@
+node_modules/
+build/*
+.idea/
+*.zip
+npm-debug*
+.DS_Store*
+.vscode/*
 
