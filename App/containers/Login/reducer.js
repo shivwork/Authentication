@@ -7,15 +7,20 @@ const getInitialState = () =>{
 export function userReducer(state = getInitialState(), action) {
   switch (action.type){
 
-    case 'SUCCESS_USERS':
+    case 'REGISTER_USER':
       return Object.assign({}, state, {
-        users: action.data
+        users: [...state.users, action.data]
       });
+      
+   
 
     case 'SUCCESS_LOGIN':
       return Object.assign({}, state, {
         activeUser: action.data
       });
+
+    case 'persist/REHYDRATE':
+      return state;
 
     case 'SUCCESS_LOGOUT':
       return Object.assign({}, state, {

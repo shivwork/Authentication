@@ -25,8 +25,8 @@ class Header extends React.Component{
                         </Navbar.Brand>
                     </Navbar.Header>
                     <Nav style={{float:'right'}}>
-                      {(this.props.activeUser && this.props.activeUser.name) ?
-                          <NavItem> {this.props.activeUser.name}</NavItem>
+                      {(this.props.activeUser && this.props.activeUser.user) ?
+                          <NavItem> {this.props.activeUser.user}</NavItem>
                         :''
                       }
                         <NavItem onClick={this.handleLogout.bind(this)} eventKey={2} ><Link to="/"> Logout</Link></NavItem>

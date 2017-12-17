@@ -5,6 +5,14 @@ export function getUsers(users) {
   }
 }
 
+
+export function registerUser(user) {
+  return {
+    type: 'REGISTER_USER',
+    data: user
+  }
+}
+
 export function loginSuccess(user) {
   return {
     type: 'SUCCESS_LOGIN',

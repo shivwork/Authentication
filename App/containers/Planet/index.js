@@ -19,20 +19,23 @@ class Planet extends Component {
 
 
   componentWillMount(){
-    axios({
-      url: `https://swapi.co/api/planets`
-    }, {mode: 'cors'}).then((res) =>{
-      if(res.data.results.length){
-        this.props.getPlanets(res.data.results);
-      }
-    })
+    // axios({
+    //   url: `https://swapi.co/api/planets`
+    // }, {mode: 'cors'}).then((res) =>{
+    //   if(res.data.results.length){
+    //     this.props.getPlanets(res.data.results);
+    //   }
+    // })
+
+    // console.log('this.props.activeUser:', this.props.activeUser);
   };
+
   componentDidMount(){
-     
- if(!this.props.activeUser){
-   alert("Please Login")
-   this.props.history.push('/')
- }
+    // console.log('this.props.activeUser:', this.props.activeUser);
+    if(!this.props.activeUser){
+      alert("Please Login")
+      this.props.history.push('/')
+    }
   }
 
   handleSearchChange(event){
