@@ -6,7 +6,12 @@ import { connect } from 'react-redux';
 import { Navbar, Nav, NavItem, Button } from 'react-bootstrap';
 import { logoutSuccess } from '../containers/Login/action';
 
-
+const styles = {
+  container:{
+    backgroundColor: '#191238',
+    fontSize: '17px'
+  }
+}
 class Header extends React.Component{
   constructor(props) {
     super(props);
@@ -18,10 +23,10 @@ class Header extends React.Component{
     render(){
         return(
             <div>
-                <Navbar>
+                <Navbar style={styles.container}>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <Link to="/"> Xebia TestApp </Link>
+                            <Link to="/"> Xebia </Link>
                         </Navbar.Brand>
                     </Navbar.Header>
                     <Nav style={{float:'right'}}>

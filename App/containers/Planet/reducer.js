@@ -1,16 +1,22 @@
 const getInitialState = () =>{
   return {
-    planets: []
+    planets: [],
+    fetchPlanetLoading: false
   }
 };
 
 export function planetReducer(state = getInitialState(), action) {
   switch (action.type){
+    case 'GET_PLANETS_REQUEST':
+      return Object.assign({}, state, {
+        fetchPlanetLoading: true
+      })
 
     case 'GET_PLANETS_SUCCESS':
       return Object.assign({}, state, {
         allPlanets: action.data,
-        planets: action.data
+        planets: action.data,
+        fetchPlanetLoading: false
       });
 
     case 'FILTER_PLANETS_SUCCESS':

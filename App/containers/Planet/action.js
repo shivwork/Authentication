@@ -5,6 +5,7 @@ export function getPlanetsRequest() {
 }
 
 export function getPlanetsSuccess(planets) {
+   console.log('GET_PLANETS_SUCCESS planets', planets);
   return {
     type: 'GET_PLANETS_SUCCESS',
     data: planets

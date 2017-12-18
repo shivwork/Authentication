@@ -27,7 +27,7 @@ const store = createStore(
     )
 );
 
-persistStore(store);
+persistStore(store,{ whitelist: ['userReducer'] });
 sagaMiddleware.run(saga);
 
 ReactDOM.render(

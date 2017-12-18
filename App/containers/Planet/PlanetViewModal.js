@@ -2,8 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Modal, Button } from 'react-bootstrap';
 
+const styles = {
+  title:{
+    fontSize: '15px',
+    paddingLeft:'7em',
+    fontWeight: 'bold'
+  },
+  value:{
+    paddingRight: '8em',
+    float: 'right'
+  },
+  div:{
+    lineHeight: '32px'
+  }
+} 
 class PlanetViewModal extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -24,29 +37,13 @@ class PlanetViewModal extends Component {
         </Modal.Header>
 
         <Modal.Body>
-          <div>
-            <label className="col-md-3">Name </label>
-            <div className="col-md-2"></div>
-            <p className="col-md-6">{this.props.activePlanet.name}</p>
-            <label className="col-md-3">Population </label>
-            <div className="col-md-2"></div>
-            <p className="col-md-6">{this.props.activePlanet.population}</p>
-            <label className="col-md-3">Orbital period </label>
-            <div className="col-md-2"></div>
-            <p className="col-md-6">{this.props.activePlanet.orbital_period}</p>
-             <label className="col-md-3">Diameter </label>
-            <div className="col-md-2"></div>
-            <p className="col-md-6">{this.props.activePlanet.diameter}</p>
-             <label className="col-md-3">Rotation period </label>
-            <div className="col-md-2"></div>
-            <p className="col-md-6">{this.props.activePlanet.rotation_period}</p>
-             <label className="col-md-3">Surface water </label>
-            <div className="col-md-2"></div>
-            <p className="col-md-6">{this.props.activePlanet.surface_water}</p>
-             <label className="col-md-3">Terrain </label>
-            <div className="col-md-2"></div>
-            <p className="col-md-6">{this.props.activePlanet.terrain}</p>
-          </div>
+          <div style={styles.div}><span style={styles.title}>Name</span> <span style={styles.value}>{this.props.activeParentPlanet.name}</span></div>
+          <div style={styles.div}><span style={styles.title}>Population</span> <span style={styles.value}>{this.props.activeParentPlanet.population}</span></div>
+          <div style={styles.div}><span style={styles.title}>Orbital period</span> <span style={styles.value}>{this.props.activeParentPlanet.orbital_period}</span></div>
+          <div style={styles.div}><span style={styles.title}>Diameter</span> <span style={styles.value}>{this.props.activeParentPlanet.diameter}</span></div>
+          <div style={styles.div}><span style={styles.title}>Rotation period</span> <span style={styles.value}>{this.props.activeParentPlanet.rotation_period}</span></div>
+          <div style={styles.div}><span style={styles.title}>Surface water</span> <span style={styles.value}>{this.props.activeParentPlanet.surface_water}</span></div>
+          <div style={styles.div}><span style={styles.title}>Terrain</span> <span style={styles.value}>{this.props.activeParentPlanet.terrain}</span></div>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={this.handleClose.bind(this)}>Close</Button>
